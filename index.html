@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>NIGGA</title>
+  <title>Libas Ghar</title>
 
   <style>
 
@@ -13,36 +13,21 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
     body{
 
-      height:100vh;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
-
-      overflow:hidden;
-
       font-family:Arial, sans-serif;
 
-      background:
-      linear-gradient(
-      rgba(0,0,0,0.65),
-      rgba(0,0,0,0.65)
-      ),
+      background:#f8f5f1;
 
-      url("https://images.unsplash.com/photo-1511300636408-a63a89df3482?q=80&w=1974&auto=format&fit=crop");
+      color:#222;
 
-      background-size:cover;
-
-      background-position:center;
-
-      position:relative;
+      overflow-x:hidden;
     }
 
-    canvas{
+    nav{
 
       position:fixed;
 
@@ -50,47 +35,282 @@
       left:0;
 
       width:100%;
-      height:100%;
 
-      z-index:0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+
+      padding:22px 8%;
+
+      background:rgba(248,245,241,0.92);
+
+      backdrop-filter:blur(10px);
+
+      border-bottom:1px solid rgba(0,0,0,0.05);
+
+      z-index:1000;
     }
 
-    h1{
+    .logo{
 
-      position:relative;
+      font-size:30px;
 
-      z-index:2;
+      font-weight:bold;
+
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+
+      display:flex;
+
+      gap:28px;
+    }
+
+    .nav-links a{
+
+      text-decoration:none;
+
+      color:#222;
+
+      font-size:15px;
+
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+
+      opacity:0.6;
+    }
+
+    section{
+
+      padding:110px 8%;
+    }
+
+    .hero{
+
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background:
+      linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+      ),
+
+      url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1974&auto=format&fit=crop");
+
+      background-size:cover;
+
+      background-position:center;
 
       color:white;
 
-      font-size:11vw;
+      text-align:center;
+    }
+
+    .hero-content{
+
+      max-width:800px;
+    }
+
+    .hero h1{
+
+      font-size:85px;
+
+      margin-bottom:20px;
+
+      letter-spacing:3px;
+    }
+
+    .hero p{
+
+      font-size:22px;
+
+      line-height:1.8;
+
+      opacity:0.9;
+    }
+
+    .hero button{
+
+      margin-top:40px;
+
+      padding:16px 34px;
+
+      border:none;
+
+      background:white;
+
+      color:black;
+
+      font-size:17px;
+
+      border-radius:40px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .hero button:hover{
+
+      transform:scale(1.05);
+
+      opacity:0.9;
+    }
+
+    .section-title{
 
       text-align:center;
 
-      text-transform:uppercase;
+      font-size:52px;
 
-      letter-spacing:5px;
-
-      padding:20px;
-
-      text-shadow:
-      0 0 10px rgba(255,255,255,0.9),
-      0 0 30px rgba(56,189,248,0.8),
-      0 0 60px rgba(124,58,237,0.8);
-
-      animation: glow 2s infinite alternate;
+      margin-bottom:18px;
     }
 
-    @keyframes glow{
+    .section-subtitle{
 
-      from{
-        transform:scale(1);
-      }
+      text-align:center;
 
-      to{
-        transform:scale(1.04);
-      }
+      max-width:700px;
 
+      margin:auto;
+
+      font-size:20px;
+
+      line-height:1.8;
+
+      opacity:0.7;
+
+      margin-bottom:70px;
+    }
+
+    .collections{
+
+      display:grid;
+
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+      gap:28px;
+    }
+
+    .card{
+
+      background:white;
+
+      border-radius:25px;
+
+      overflow:hidden;
+
+      transition:0.4s;
+
+      box-shadow:0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    .card:hover{
+
+      transform:translateY(-10px);
+    }
+
+    .card img{
+
+      width:100%;
+
+      height:420px;
+
+      object-fit:cover;
+    }
+
+    .card-content{
+
+      padding:28px;
+    }
+
+    .card h3{
+
+      font-size:28px;
+
+      margin-bottom:12px;
+    }
+
+    .card p{
+
+      line-height:1.8;
+
+      opacity:0.7;
+    }
+
+    .luxury-section{
+
+      background:#ede7df;
+
+      text-align:center;
+
+      border-radius:35px;
+
+      padding:90px 40px;
+    }
+
+    .luxury-section h2{
+
+      font-size:58px;
+
+      margin-bottom:25px;
+    }
+
+    .luxury-section p{
+
+      max-width:760px;
+
+      margin:auto;
+
+      font-size:21px;
+
+      line-height:1.9;
+
+      opacity:0.75;
+    }
+
+    .luxury-section button{
+
+      margin-top:40px;
+
+      padding:16px 34px;
+
+      border:none;
+
+      background:black;
+
+      color:white;
+
+      border-radius:40px;
+
+      font-size:17px;
+
+      cursor:pointer;
+
+      transition:0.3s;
+    }
+
+    .luxury-section button:hover{
+
+      transform:scale(1.05);
+    }
+
+    footer{
+
+      text-align:center;
+
+      padding:40px;
+
+      font-size:15px;
+
+      opacity:0.6;
     }
 
   </style>
@@ -99,69 +319,163 @@
 
 <body>
 
-  <canvas id="particles"></canvas>
+  <nav>
 
-  <h1>BREAKING NEWS : 
-BUCHAL KALAN, MUHALLAH REHMANIA ME AIK NIGGER DARYAFT HOA HA. URF 'MAALI'</h1>
+    <div class="logo">
+      Libas Ghar
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#collections">Collections</a>
+
+      <a href="#luxury">Luxury</a>
+
+      <a href="#contact">Contact</a>
+
+    </div>
+
+  </nav>
+
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>LIBAS GHAR</h1>
+
+      <p>
+
+        Timeless elegance inspired by modern Pakistani fashion.
+        Discover premium eastern wear designed with sophistication,
+        comfort, and luxury aesthetics.
+
+      </p>
+
+      <button onclick="scrollCollection()">
+        Explore Collection
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <section id="collections">
+
+    <h2 class="section-title">
+      Featured Collections
+    </h2>
+
+    <p class="section-subtitle">
+
+      Curated styles blending traditional elegance with contemporary fashion trends.
+
+    </p>
+
+    <div class="collections">
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <h3>Luxury Pret</h3>
+
+          <p>
+
+            Elegant silhouettes crafted for modern women who appreciate timeless sophistication.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <h3>Festive Wear</h3>
+
+          <p>
+
+            Rich textures and premium embroidery inspired by eastern traditions.
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1974&auto=format&fit=crop">
+
+        <div class="card-content">
+
+          <h3>Modern Essentials</h3>
+
+          <p>
+
+            Minimal and graceful styles designed for everyday elegance.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="luxury">
+
+    <div class="luxury-section">
+
+      <h2>Luxury Redefined</h2>
+
+      <p>
+
+        At Libas Ghar, fashion is more than clothing —
+        it is identity, confidence, and timeless beauty.
+        Every collection is designed to create an elegant experience
+        inspired by modern luxury brands.
+
+      </p>
+
+      <button>
+        Shop Now
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <footer id="contact">
+
+    Libas Ghar © 2026 — Premium Pakistani Fashion
+
+  </footer>
+
 
   <script>
 
-    const canvas = document.getElementById("particles");
+    function scrollCollection(){
 
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const particles = [];
-
-    for(let i = 0; i < 100; i++){
-
-      particles.push({
-
-        x:Math.random() * canvas.width,
-
-        y:Math.random() * canvas.height,
-
-        size:Math.random() * 3 + 1,
-
-        speedY:Math.random() * 1 + 0.3
-
+      document.getElementById("collections").scrollIntoView({
+        behavior:"smooth"
       });
 
     }
-
-    function animate(){
-
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-
-      ctx.fillStyle = "rgba(255,255,255,0.8)";
-
-      particles.forEach(p => {
-
-        ctx.beginPath();
-
-        ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
-
-        ctx.fill();
-
-        p.y += p.speedY;
-
-        if(p.y > canvas.height){
-
-          p.y = 0;
-
-          p.x = Math.random() * canvas.width;
-
-        }
-
-      });
-
-      requestAnimationFrame(animate);
-
-    }
-
-    animate();
 
   </script>
 
