@@ -3,39 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Launchpad | Home</title>
+    <title>LIBAS GHAR | Premium Apparel</title>
+    <!-- Google Fonts for a high-end feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Reset */
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c5a059; /* Gold/Champagne accent */
+            --white: #ffffff;
+            --light-gray: #f9f9f9;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f7f6;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
+            color: var(--primary);
+            overflow-x: hidden;
         }
 
-        /* Navigation */
+        /* --- Navigation --- */
         nav {
-            background: #2c3e50;
-            color: #fff;
-            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
+            padding: 20px 5%;
+            position: fixed;
+            width: 100%;
             top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
+            border-bottom: 1px solid #eee;
         }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         nav ul {
@@ -44,138 +55,236 @@
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin: 0 20px;
         }
 
         nav ul li a {
-            color: #fff;
             text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
             transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #3498db;
+            color: var(--accent);
         }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero {
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1350&q=80');
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             text-align: center;
-            color: #fff;
-            padding: 0 20px;
+            color: var(--white);
         }
 
-        .hero h1 {
-            font-size: 3rem;
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
             margin-bottom: 1rem;
+            letter-spacing: 5px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        .hero-content p {
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            max-width: 600px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        .btn {
-            display: inline-block;
-            background: #3498db;
-            color: #fff;
-            padding: 12px 30px;
+        .cta-btn {
+            padding: 15px 40px;
+            background: var(--white);
+            color: var(--primary);
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
 
-        .btn:hover {
-            background: #2980b9;
+        .cta-btn:hover {
+            background: var(--accent);
+            color: var(--white);
         }
 
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 5rem 10%;
-            background: #fff;
-        }
-
-        .feature-card {
+        /* --- Collection Grid --- */
+        .section-title {
             text-align: center;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-card i {
+            padding: 80px 0 40px;
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            color: #3498db;
-            margin-bottom: 1rem;
         }
 
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: #fff;
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 0 5%;
+        }
+
+        .product-card {
+            position: relative;
+            overflow: hidden;
+            background: var(--light-gray);
+            cursor: pointer;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
         }
 
-        /* Responsive Design */
+        .product-info h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .product-info p {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 60px 5% 20px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-content h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-content ul {
+            list-style: none;
+        }
+
+        .footer-content ul li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        /* --- Mobile Responsive --- */
         @media (max-width: 768px) {
-            nav ul { display: none; } /* Simplified for mobile */
-            .hero h1 { font-size: 2rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            nav ul { display: none; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">GEMINI_CORE</div>
+        <div class="logo">LIBAS GHAR</div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">New Arrivals</a></li>
+            <li><a href="#">Menswear</a></li>
+            <li><a href="#">Womenswear</a></li>
+            <li><a href="#">Our Story</a></li>
         </ul>
+        <div class="nav-icons">
+            <span>🔍</span> &nbsp; <span>🛒</span>
+        </div>
     </nav>
 
     <header class="hero">
-        <h1>Design Your Future</h1>
-        <p>A minimalist, high-performance template to get your project off the ground in seconds.</p>
-        <a href="#contact" class="btn">Get Started</a>
+        <div class="hero-content">
+            <p>The Art of Fine Dressing</p>
+            <h1>ELEGANCE REDEFINED</h1>
+            <a href="#collection" class="cta-btn">Shop Collection</a>
+        </div>
     </header>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>Responsive</h3>
-            <p>Looks great on desktops, tablets, and mobile phones right out of the box.</p>
+    <h2 class="section-title" id="collection">Seasonal Favorites</h2>
+
+    <section class="collection-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1594932224010-75f2a778462b?auto=format&fit=crop&w=800&q=80" alt="Suit">
+            <div class="product-info">
+                <h3>Executive Peak Lapel Suit</h3>
+                <p>$299.00</p>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>Fast Loading</h3>
-            <p>Optimized code structure ensures your users aren't kept waiting.</p>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1539109132381-31a15b2c2a4a?auto=format&fit=crop&w=800&q=80" alt="Dress">
+            <div class="product-info">
+                <h3>Velvet Evening Gown</h3>
+                <p>$185.00</p>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>Modern UI</h3>
-            <p>Clean aesthetics focused on readability and user experience.</p>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&q=80" alt="Casual">
+            <div class="product-info">
+                <h3>Classic Linen Blazer</h3>
+                <p>$120.00</p>
+            </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <p>&copy; 2026 Your Company Name. All rights reserved.</p>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h4>LIBAS GHAR</h4>
+                <ul>
+                    <li>Our Heritage</li>
+                    <li>Sustainability</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Customer Care</h4>
+                <ul>
+                    <li>Shipping & Returns</li>
+                    <li>Size Guide</li>
+                    <li>Track Order</li>
+                </ul>
+            </div>
+            <div>
+                <h4>Newsletter</h4>
+                <p style="font-size: 0.8rem; color: #ccc;">Join for exclusive early access to new drops.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 LIBAS GHAR. All Rights Reserved.
+        </div>
     </footer>
 
 </body>
